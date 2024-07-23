@@ -6,9 +6,6 @@
 #include <synchapi.h>
 #include <stdlib.h>
 
-// Coordinates for 1920x1080
-// 100% display scale
-// with fullscreen
 const unsigned short int pixel_x = 962;  // Update with the correct x coordinate
 const unsigned short int pixel_y = 892;  // Update with the correct y coordinate
 
@@ -47,24 +44,21 @@ static void toggle_script() {
 
 static void main_loop() {
 	while (true) {
-		// Check if the tile is centered
 		if (is_tile_present() && running) {
-			// Click
 			mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
 			mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
 		}
 
-		// Small delay to prevent high CPU usage | Add more milliseconds if have a weak device due to more CPU usage
 		Sleep(10);
 	}
 }
 
 int main() {
-	printf("Press 'R' to toggle the script.\nPress 'O' to exit out of the program.\n");
+	printf("SBRhythm.c / Version 1.0.1\nPress 'R' to toggle the script.\nPress 'P' to exit out of the program.\n");
 
 	// Set up hotkeys for toggling the script
 	RegisterHotKey(NULL, 1, MOD_NOREPEAT, 'R');
-	RegisterHotKey(NULL, 2, MOD_NOREPEAT, 'O');
+	RegisterHotKey(NULL, 2, MOD_NOREPEAT, 'P');
 
 	// Start the main loop in a separate thread
 	_beginthread(&main_loop, 0, NULL);
