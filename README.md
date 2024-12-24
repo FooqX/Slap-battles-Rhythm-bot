@@ -1,7 +1,13 @@
-# SBRhythm
-Slap battles Rhythm glove bot
-
 # Installation
+1. Download the source file
+2. Download a compiler:
+   - If you are on Windows:
+   Download LLVM Clang from the Github releases.
+   Check if it's downloaded correctly using `clang --version` command in CMD/Powershell 7 (you can choose any).
+   Compile the source file using this command: `clang -O3 -march=x86-64 -std=c23 -target -o SBRhythm.exe THE_SOURCE_FILE_NAME__ENTER_IT_YOURSELF.c`
+
+
+Basically
 You have the code, compile it yourself because it needs modification for the x and y coordinates (find the comment in the code about that). Find the x and y coordinates of your mouse cursor when you place it on
 the middle of the Rhythm glove tiles. So basically, you copy the x and y coordinates of the mouse cursor when you place it in the middle of the thing where tiles go.
 
